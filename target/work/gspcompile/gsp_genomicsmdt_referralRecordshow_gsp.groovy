@@ -70,44 +70,51 @@ invokeTag('message','g',62,['code':("referralRecord.numberOfSamples.label"),'def
 printHtmlPart(7)
 expressionOut.print(fieldValue(bean: referralRecordInstance, field: "numberOfSamples"))
 printHtmlPart(9)
-invokeTag('message','g',69,['code':("referralRecord.preferredProgram.label"),'default':("Preferred Program")],-1)
-printHtmlPart(5)
-createTagBody(2, {->
-expressionOut.print(referralRecordInstance?.preferredProgram?.encodeAsHTML())
-})
-invokeTag('link','g',71,['controller':("program"),'action':("show"),'id':(referralRecordInstance?.preferredProgram?.id)],2)
-printHtmlPart(8)
-invokeTag('message','g',76,['code':("referralRecord.mdt.label"),'default':("MDT")],-1)
+invokeTag('message','g',69,['code':("referralRecord.mdt.label"),'default':("MDT")],-1)
 printHtmlPart(7)
 createTagBody(2, {->
 expressionOut.print(referralRecordInstance?.mdt?.encodeAsHTML())
 })
-invokeTag('link','g',78,['controller':("MDT"),'action':("show"),'id':(referralRecordInstance?.mdt?.id)],2)
-printHtmlPart(9)
-invokeTag('message','g',83,['code':("referralRecord.proposedDiagnosis.label"),'default':("Proposed Diagnosis")],-1)
+invokeTag('link','g',71,['controller':("MDT"),'action':("show"),'id':(referralRecordInstance?.mdt?.id)],2)
 printHtmlPart(10)
-for( p in (referralRecordInstance.proposedDiagnosis) ) {
+invokeTag('message','g',76,['code':("referralRecord.proposedDiagnosis.label"),'default':("Proposed Diagnosis")],-1)
 printHtmlPart(11)
+for( p in (referralRecordInstance.proposedDiagnosis) ) {
+printHtmlPart(12)
 createTagBody(3, {->
 expressionOut.print(p?.encodeAsHTML())
 })
-invokeTag('link','g',88,['controller':("proposedDiagnosis"),'action':("show"),'id':(p.id)],3)
-printHtmlPart(12)
-}
+invokeTag('link','g',81,['controller':("proposedDiagnosis"),'action':("show"),'id':(p.id)],3)
 printHtmlPart(13)
-createClosureForHtmlPart(14, 2)
-invokeTag('link','g',103,['controller':("proposedDiagnosis"),'action':("create"),'params':(['referralRecord.id': referralRecordInstance?.id])],2)
+}
+printHtmlPart(14)
+invokeTag('message','g',89,['code':("referralRecord.attachedEvidence.label"),'default':("Attached Evidence")],-1)
 printHtmlPart(15)
-})
-invokeTag('captureBody','sitemesh',107,[:],1)
+for( e in (referralRecordInstance.attachedEvidence) ) {
 printHtmlPart(16)
+createTagBody(3, {->
+expressionOut.print(e?.encodeAsHTML())
+})
+invokeTag('link','g',94,['controller':("attachedEvidence"),'action':("show"),'id':(e.id)],3)
+printHtmlPart(17)
+}
+printHtmlPart(18)
+createClosureForHtmlPart(19, 2)
+invokeTag('link','g',109,['controller':("proposedDiagnosis"),'action':("create"),'params':(['referralRecord.id': referralRecordInstance?.id])],2)
+printHtmlPart(20)
+createClosureForHtmlPart(21, 2)
+invokeTag('link','g',111,['controller':("form"),'action':("familyHistory"),'params':(['referralRecord': referralRecordInstance?.id])],2)
+printHtmlPart(22)
+})
+invokeTag('captureBody','sitemesh',115,[:],1)
+printHtmlPart(23)
 }
 public static final Map JSP_TAGS = new HashMap()
 protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1445506055189L
+public static final long LAST_MODIFIED = 1447414725819L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

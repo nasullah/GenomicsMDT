@@ -64,13 +64,6 @@
 				<td valign="top" class="value">${fieldValue(bean: referralRecordInstance, field: "numberOfSamples")}</td>
 
 			</tr>
-		
-			<tr class="prop">
-				<td valign="top" class="name"><g:message code="referralRecord.preferredProgram.label" default="Preferred Program" /></td>
-				
-				<td valign="top" class="value"><g:link controller="program" action="show" id="${referralRecordInstance?.preferredProgram?.id}">${referralRecordInstance?.preferredProgram?.encodeAsHTML()}</g:link></td>
-				
-			</tr>
 
 			<tr class="prop">
 				<td valign="top" class="name"><g:message code="referralRecord.mdt.label" default="MDT" /></td>
@@ -91,18 +84,33 @@
 				</td>
 				
 			</tr>
+
+			<tr class="prop">
+				<td valign="top" class="name"><g:message code="referralRecord.attachedEvidence.label" default="Attached Evidence" /></td>
+
+				<td valign="top" style="text-align: left;" class="value">
+					<ul>
+						<g:each in="${referralRecordInstance.attachedEvidence}" var="e">
+							<li><g:link controller="attachedEvidence" action="show" id="${e.id}">${e?.encodeAsHTML()}</g:link></li>
+						</g:each>
+					</ul>
+				</td>
+
+			</tr>
 		
 		</tbody>
 	</table>
 </section>
 
-<hr style="border:1; height:1px" />
+<hr/>
 
 <p class="text-primary">Available Actions</p>
 
 <a class='btn btn-primary btn-small' <g:link controller="proposedDiagnosis" action="create" params="['referralRecord.id': referralRecordInstance?.id]"><i class="glyphicon glyphicon-plus"></i> Add Proposed Diagnosis</g:link>
 
-<hr style="border:1; height:1px" />
+<a class='btn btn-primary btn-small' <g:link controller="form" action="familyHistory" params="['referralRecord': referralRecordInstance?.id]"><i class="glyphicon glyphicon-plus"></i> Add Family History</g:link>
+
+<hr/>
 
 </body>
 

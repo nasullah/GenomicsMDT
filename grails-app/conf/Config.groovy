@@ -97,7 +97,7 @@ environments {
     }
     production {
 //        grails.logging.jul.usebridge = false
-        grails.serverURL = "http://192.168.56.101:8080/genomicsmdt"
+        grails.serverURL = "http://oxnetbrc15:8080/genomicsmdt"
     }
 }
 

@@ -12,12 +12,14 @@ class AttendenceRecord {
 		invitedOn()
 		repliedOn(nullable: true)
 		status()
+		accessGUID(nullable: true)
     }
 
 	Person person
 	Date invitedOn
 	Date repliedOn
 	AttendenceStatus status
+	String accessGUID
 	/*
 	 * Methods of the Domain Class
 	 */

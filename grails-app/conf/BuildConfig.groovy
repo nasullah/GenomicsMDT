@@ -77,6 +77,7 @@ grails.project.dependency.resolution = {
 
         compile ":filterpane:2.4.2"
         compile ":ic-alendar:0.4.4"
+        compile ":richui:0.8"
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0.1"
         //runtime ":cached-resources:1.1"

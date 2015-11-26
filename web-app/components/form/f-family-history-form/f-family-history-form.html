@@ -1,0 +1,26 @@
+<body>
+    <form>
+        {{#if formTitle}}
+        <h1>{{formTitle}}</h1>
+        {{/if}}
+
+        {{#if formHeaderText}}
+        <p>{{formHeaderText}}</p>
+        {{/if}}
+
+        {{#component {name: 'fs-family-history', params: {data: data()['familyHistory'], cssClass: 'null'}}}}{{/component}}
+        {{#component {name: 'fs-history-item', params: {data: data()['historyItem'], cssClass: 'null'}}}}{{/component}}
+        {{#component {name: 'fs-pedigree', params: {data: data()['pedigree'], cssClass: 'null'}}}}{{/component}}
+        {{#component {name: 'fs-familial-ethnicity', params: {data: data()['familialEthnicity'], cssClass: 'null'}}}}{{/component}}
+        
+        {{#if formFooterText}}
+        <p>{{sectionFooterText}}</p>
+        {{/if}}
+
+        <hr />
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary btn-lg" data-bind="click: submitForm">Submit</button>
+        </div>
+    </form>
+</body>

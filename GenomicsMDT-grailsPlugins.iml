@@ -18,6 +18,7 @@
           <root url="file://$MODULE_DIR$/target/work/plugins/filterpane-2.4.2/grails-app/views" relative="/" />
           <root url="file://$MODULE_DIR$/target/work/plugins/mail-1.0.7/grails-app/views" relative="/" />
           <root url="file://$MODULE_DIR$/target/work/plugins/ic-alendar-0.4.4/web-app" relative="/" />
+          <root url="file://$MODULE_DIR$/target/work/plugins/richui-0.8/web-app" relative="/" />
         </webroots>
         <sourceRoots />
       </configuration>
@@ -90,6 +91,13 @@
       <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/resources-1.2.7/grails-app/i18n" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/resources-1.2.7/grails-app/taglib" isTestSource="false" />
     </content>
+    <content url="file://$MODULE_DIR$/target/work/plugins/richui-0.8">
+      <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/richui-0.8/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/richui-0.8/grails-app/i18n" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/richui-0.8/grails-app/controllers" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/richui-0.8/grails-app/services" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/richui-0.8/grails-app/taglib" isTestSource="false" />
+    </content>
     <content url="file://$MODULE_DIR$/target/work/plugins/scaffolding-2.0.3">
       <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/scaffolding-2.0.3/src/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/scaffolding-2.0.3/src/groovy" isTestSource="false" />
@@ -144,10 +152,12 @@
           <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-jasper/7.0.52/tomcat-embed-jasper-7.0.52.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/tomcat-catalina-ant/7.0.52/tomcat-catalina-ant-7.0.52.jar!/" />
           <root url="file://$MODULE_DIR$/target/work/plugins/joda-time-1.4/lib" />
+          <root url="file://$MODULE_DIR$/target/work/plugins/richui-0.8/lib" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
         <jarDirectory url="file://$MODULE_DIR$/target/work/plugins/joda-time-1.4/lib" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/target/work/plugins/richui-0.8/lib" recursive="false" />
       </library>
     </orderEntry>
   </component>

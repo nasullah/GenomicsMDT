@@ -36,30 +36,42 @@ class ReferralRecordController {
     }
 
     def findPerson() {
-        def searchPerson= params.searchPerson
-
-        def listPerson = Person.where{
-            name =~ searchPerson
-        }.findAll()
-
-        if (!listPerson.empty){
-            render(template: "person",  model: [listPerson: listPerson])
+        def listPerson = Person.createCriteria().listDistinct {
+            ilike("name", "%${params.query}%")
+        }
+        //Create XML response
+        render(contentType: "text/xml") {
+            results() {
+                listPerson.each { person ->
+                    result(){
+                        name(person)
+                        //Optional id which will be available in onItemSelect
+                        id(person.id)
+                    }
+                }
+            }
         }
     }
 
     def findPatient() {
-        def searchPatient= params.searchPatient
-
-        def getPatient = Patient.createCriteria().get{
+        def listPatient = Patient.createCriteria().listDistinct{
             or{
-                eq('givenName', searchPatient, [ignoreCase: true])
-                eq('familyName', searchPatient, [ignoreCase: true])
-                eq('nhsNumber', searchPatient, [ignoreCase: true])
-                eq('mrn', searchPatient, [ignoreCase: true])
+                ilike("givenName", "%${params.query}%")
+                ilike("familyName", "%${params.query}%")
+                ilike("nhsNumber", "%${params.query}%")
+                ilike("mrn", "%${params.query}%")
             }
         }
-        if (getPatient){
-            render(template: "patient",  model: [getPatient: getPatient])
+        render(contentType: "text/xml") {
+            results() {
+                listPatient.each { patient ->
+                    result(){
+                        name(patient)
+                        //Optional id which will be available in onItemSelect
+                        id(patient.id)
+                    }
+                }
+            }
         }
     }
 

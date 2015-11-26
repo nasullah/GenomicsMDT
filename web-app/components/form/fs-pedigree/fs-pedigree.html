@@ -1,0 +1,18 @@
+<fieldset class="{{cssClass}}">
+    {{#if sectionTitle}}
+    <legend>{{sectionTitle}}</legend>
+    {{/if}}
+
+    {{#if sectionHeaderText}}
+    <p>{{sectionHeaderText}}</p>
+    {{/if}}
+
+    
+    {{#component {name: 'fe-pedigree', params: {data: data()['pedigree'], cssClass: 'null'}}}}{{/component}}
+    
+    {{#component {name: 'fe-pedigree-type', params: {data: data()['pedigreeType'], cssClass: 'null'}}}}{{/component}}
+    
+    {{#if sectionFooterText}}
+    <p>{{sectionFooterText}}</p>
+    {{/if}}
+</fieldset>

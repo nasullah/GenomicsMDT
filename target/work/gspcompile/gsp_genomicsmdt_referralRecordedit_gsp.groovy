@@ -26,38 +26,40 @@ invokeTag('message','g',8,['code':("default.edit.label"),'args':([entityName])],
 invokeTag('captureTitle','sitemesh',8,[:],3)
 })
 invokeTag('wrapTitleTag','sitemesh',8,[:],2)
+printHtmlPart(1)
+invokeTag('autoComplete','resource',9,[:],-1)
 printHtmlPart(2)
 })
-invokeTag('captureHead','sitemesh',9,[:],1)
+invokeTag('captureHead','sitemesh',10,[:],1)
 printHtmlPart(3)
 createTagBody(1, {->
 printHtmlPart(4)
 createTagBody(2, {->
 printHtmlPart(5)
-invokeTag('renderErrors','g',17,['bean':(referralRecordInstance),'as':("list")],-1)
+invokeTag('renderErrors','g',18,['bean':(referralRecordInstance),'as':("list")],-1)
 printHtmlPart(6)
 })
-invokeTag('hasErrors','g',19,['bean':(referralRecordInstance)],2)
+invokeTag('hasErrors','g',20,['bean':(referralRecordInstance)],2)
 printHtmlPart(7)
 createTagBody(2, {->
 printHtmlPart(8)
-invokeTag('hiddenField','g',22,['name':("id"),'value':(referralRecordInstance?.id)],-1)
+invokeTag('hiddenField','g',23,['name':("id"),'value':(referralRecordInstance?.id)],-1)
 printHtmlPart(8)
-invokeTag('hiddenField','g',23,['name':("version"),'value':(referralRecordInstance?.version)],-1)
+invokeTag('hiddenField','g',24,['name':("version"),'value':(referralRecordInstance?.version)],-1)
 printHtmlPart(8)
-invokeTag('hiddenField','g',24,['name':("_method"),'value':("PUT")],-1)
+invokeTag('hiddenField','g',25,['name':("_method"),'value':("PUT")],-1)
 printHtmlPart(9)
-invokeTag('render','g',26,['template':("form")],-1)
+invokeTag('render','g',27,['template':("form")],-1)
 printHtmlPart(10)
-invokeTag('actionSubmit','g',29,['class':("btn btn-primary"),'action':("update"),'value':(message(code: 'default.button.update.label', default: 'Update'))],-1)
+invokeTag('actionSubmit','g',30,['class':("btn btn-primary"),'action':("update"),'value':(message(code: 'default.button.update.label', default: 'Update'))],-1)
 printHtmlPart(11)
-invokeTag('message','g',30,['code':("default.button.reset.label"),'default':("Reset")],-1)
+invokeTag('message','g',31,['code':("default.button.reset.label"),'default':("Reset")],-1)
 printHtmlPart(12)
 })
-invokeTag('form','g',32,['method':("post"),'class':("form-horizontal"),'role':("form")],2)
+invokeTag('form','g',33,['method':("post"),'class':("form-horizontal"),'role':("form")],2)
 printHtmlPart(13)
 })
-invokeTag('captureBody','sitemesh',36,[:],1)
+invokeTag('captureBody','sitemesh',37,[:],1)
 printHtmlPart(14)
 }
 public static final Map JSP_TAGS = new HashMap()
@@ -65,7 +67,7 @@ protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1434637657871L
+public static final long LAST_MODIFIED = 1448535222637L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

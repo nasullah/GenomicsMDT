@@ -26,32 +26,34 @@ invokeTag('message','g',8,['code':("default.create.label"),'args':([entityName])
 invokeTag('captureTitle','sitemesh',8,[:],3)
 })
 invokeTag('wrapTitleTag','sitemesh',8,[:],2)
+printHtmlPart(1)
+invokeTag('autoComplete','resource',9,[:],-1)
 printHtmlPart(2)
 })
-invokeTag('captureHead','sitemesh',9,[:],1)
+invokeTag('captureHead','sitemesh',10,[:],1)
 printHtmlPart(3)
 createTagBody(1, {->
 printHtmlPart(4)
 createTagBody(2, {->
 printHtmlPart(5)
-invokeTag('renderErrors','g',17,['bean':(referralRecordInstance),'as':("list")],-1)
+invokeTag('renderErrors','g',18,['bean':(referralRecordInstance),'as':("list")],-1)
 printHtmlPart(6)
 })
-invokeTag('hasErrors','g',19,['bean':(referralRecordInstance)],2)
+invokeTag('hasErrors','g',20,['bean':(referralRecordInstance)],2)
 printHtmlPart(7)
 createTagBody(2, {->
 printHtmlPart(8)
-invokeTag('render','g',22,['template':("form")],-1)
+invokeTag('render','g',23,['template':("form")],-1)
 printHtmlPart(9)
-invokeTag('submitButton','g',25,['name':("create"),'class':("btn btn-primary"),'value':("Save")],-1)
+invokeTag('submitButton','g',26,['name':("create"),'class':("btn btn-primary"),'value':("Save")],-1)
 printHtmlPart(10)
-invokeTag('message','g',26,['code':("default.button.reset.label"),'default':("Reset")],-1)
+invokeTag('message','g',27,['code':("default.button.reset.label"),'default':("Reset")],-1)
 printHtmlPart(11)
 })
-invokeTag('form','g',28,['action':("save"),'class':("form-horizontal"),'role':("form")],2)
+invokeTag('form','g',29,['action':("save"),'class':("form-horizontal"),'role':("form")],2)
 printHtmlPart(12)
 })
-invokeTag('captureBody','sitemesh',34,[:],1)
+invokeTag('captureBody','sitemesh',35,[:],1)
 printHtmlPart(13)
 }
 public static final Map JSP_TAGS = new HashMap()
@@ -59,7 +61,7 @@ protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1434637657864L
+public static final long LAST_MODIFIED = 1448535222631L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

@@ -11,7 +11,7 @@ class ReferralRecord {
     }
 
 	static	belongsTo	= [patient:Patient, person:Person]	// tells GORM to cascade commands: e.g., delete this object if the "parent" is deleted.
-    static hasMany = [proposedDiagnosis:ProposedDiagnosis]
+    static hasMany = [proposedDiagnosis:ProposedDiagnosis, attachedEvidence:AttachedEvidence]
     static constraints = {
         patient()
         person()
@@ -19,7 +19,6 @@ class ReferralRecord {
         descriptionOfDisorder(nullable: true)
         caseStatus()
         potentialBenefits(widget: 'textarea', nullable: true, )
-        preferredProgram(nullable: true)
         numberOfSamples(nullable: true)
         mdt()
     }
@@ -29,7 +28,6 @@ class ReferralRecord {
     CaseStatus caseStatus
     String potentialBenefits
     Integer numberOfSamples
-    Program preferredProgram
     MDT mdt
     /*
      * Methods of the Domain Class

@@ -32,7 +32,7 @@ environments {
             dbCreate = "update"
             url = "jdbc:postgresql://localhost:5432/genomicsmdt"
             username = "postgres"
-            password = "admin"
+            password = "adminadmin1"
             pooled = true
 
             driverClassName = "org.postgresql.Driver"

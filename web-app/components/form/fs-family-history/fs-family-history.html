@@ -1,0 +1,28 @@
+<fieldset class="{{cssClass}}">
+    {{#if sectionTitle}}
+    <legend>{{sectionTitle}}</legend>
+    {{/if}}
+
+    {{#if sectionHeaderText}}
+    <p>{{sectionHeaderText}}</p>
+    {{/if}}
+
+    
+    {{#component {name: 'fe-added-on', params: {data: data()['addedOn'], cssClass: 'null'}}}}{{/component}}
+    
+    {{#component {name: 'fe-anonymised', params: {data: data()['anonymised'], cssClass: 'null'}}}}{{/component}}
+    
+    {{#component {name: 'fe-notes', params: {data: data()['notes'], cssClass: 'null'}}}}{{/component}}
+    
+    {{#component {name: 'fe-consanguinity', params: {data: data()['consanguinity'], cssClass: 'null'}}}}{{/component}}
+    
+    {{#component {name: 'fe-consanguinity-details', params: {data: data()['consanguinityDetails'], cssClass: 'null'}}}}{{/component}}
+    
+    {{#component {name: 'fe-history-details', params: {data: data()['historyDetails'], cssClass: 'null'}}}}{{/component}}
+    
+    {{#component {name: 'fe-ethnicity-notes', params: {data: data()['ethnicityNotes'], cssClass: 'null'}}}}{{/component}}
+    
+    {{#if sectionFooterText}}
+    <p>{{sectionFooterText}}</p>
+    {{/if}}
+</fieldset>

@@ -63,7 +63,8 @@ class AttendenceRecordController {
         }
         if (!listPersonsId.empty){
             for (int i = 0; i < listPersonsId.size(); i++) {
-                def bindingMap = [person: listPersonsId.get(i), invitedOn: new Date(), status: AttendenceStatus.findByAttendenceStatusName('Invited')]
+                def accessGUID = UUID.randomUUID().toString()
+                def bindingMap = [person: listPersonsId.get(i), invitedOn: new Date(), status: AttendenceStatus.findByAttendenceStatusName('Invited'), accessGUID: accessGUID]
                 def attendenceRecordInstance = new AttendenceRecord(bindingMap)
                 meetingInstance.addToAttendenceRecords(attendenceRecordInstance)
                 meetingInstance.save failOnError:true
@@ -86,7 +87,7 @@ class AttendenceRecordController {
                     multipart true
                     to "${Person.findById(listPersonsId.get(i).toString().toLong())?.email}"
                     subject "MDT meeting at ${meetingInstance?.time} on ${meetingInstance?.date?.format('yyyy-MM-dd')} at loction ${meetingInstance?.location}"
-                    body "This is an invitation for MDT meeting at ${meetingInstance?.time} on ${meetingInstance?.date?.format('yyyy-MM-dd')} at loction ${meetingInstance?.location}, please reply to this email."
+                    body "This is an invitation for MDT meeting at ${meetingInstance?.time} on ${meetingInstance?.date?.format('yyyy-MM-dd')} at loction ${meetingInstance?.location}, please accept the invitation by clicking this link, ${g.createLink(absolute : 'true', controller:"receiveReply", action:"reply", params:[accessGUID: AttendenceRecord?.findByPerson(Person?.findById(listPersonsId?.get(i)?.toString()?.toLong()))?.accessGUID])}"
                     attachBytes "appointment.ics", "text/calendar", builder.cal.toString().getBytes('UTF-8')
                 }
             }

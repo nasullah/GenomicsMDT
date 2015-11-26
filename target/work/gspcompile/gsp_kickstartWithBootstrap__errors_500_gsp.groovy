@@ -84,8 +84,8 @@ printHtmlPart(21)
 printHtmlPart(22)
 if(true && (exception)) {
 printHtmlPart(23)
-for( _it729987786 in (exception.stackTraceLines) ) {
-changeItVariable(_it729987786)
+for( _it148815812 in (exception.stackTraceLines) ) {
+changeItVariable(_it148815812)
 expressionOut.print(it.encodeAsHTML())
 printHtmlPart(24)
 }

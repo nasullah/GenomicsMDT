@@ -1,0 +1,20 @@
+<fieldset class="{{cssClass}}">
+    {{#if sectionTitle}}
+    <legend>{{sectionTitle}}</legend>
+    {{/if}}
+
+    {{#if sectionHeaderText}}
+    <p>{{sectionHeaderText}}</p>
+    {{/if}}
+
+    
+    {{#component {name: 'fe-relation', params: {data: data()['relation'], cssClass: 'null'}}}}{{/component}}
+    
+    {{#component {name: 'fe-ethnicity', params: {data: data()['ethnicity'], cssClass: 'null'}}}}{{/component}}
+    
+    {{#component {name: 'fe-other-ethnicity', params: {data: data()['otherEthnicity'], cssClass: 'null'}}}}{{/component}}
+    
+    {{#if sectionFooterText}}
+    <p>{{sectionFooterText}}</p>
+    {{/if}}
+</fieldset>

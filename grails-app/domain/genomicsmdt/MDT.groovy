@@ -6,7 +6,8 @@ package genomicsmdt
  */
 class MDT extends Party{
 
-    static hasMany = [members:Membership]
+    static belongsTo = [Form]
+    static hasMany = [members:Membership, form:Form]
     static constraints = {
         name()
         email(nullable: true)

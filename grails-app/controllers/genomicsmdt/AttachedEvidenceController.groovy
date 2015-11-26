@@ -51,10 +51,6 @@ class AttachedEvidenceController {
         respond attachedEvidenceInstance, model: [result: result]
     }
 
-    def test (){
-
-
-    }
     @Transactional
     def update(AttachedEvidence attachedEvidenceInstance) {
 
